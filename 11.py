@@ -1,12 +1,7 @@
 import pexpect
 import getpass
-from datetime import datetime
 #import sys
 
-# создание переменной в которой храниться дата создания конфига
-now = datetime.now()
-formatted_date = now.strftime('%Y-%m-%d')
-formatted_date
 
 
 user = 'admin'
@@ -30,7 +25,7 @@ for ip in devices_ip:
         ssh.sendline('save')
        
         ssh.expect('[#>]')
-        ssh.sendline('upload cfg_toTFTP 10.0.4.127 dest_file {}_{}.cfg'.format(ip, formatted_date))
+        ssh.sendline('upload cfg_toTFTP 10.0.4.127 dest_file {}.cfg'.format(ip))
         
         ssh.expect('#')
         print(ssh.before.decode('ascii'))
