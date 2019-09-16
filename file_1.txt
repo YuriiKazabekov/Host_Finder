@@ -1,0 +1,1146 @@
+ 
+#-------------------------------------------------------------------------------
+#                    DGS-3120-48TC Gigabit Ethernet Switch
+#                                Configuration
+#
+#                          Firmware: Build 3.10.B032
+#           Copyright(C) 2014 D-Link Corporation. All rights reserved.
+#-------------------------------------------------------------------------------
+ 
+
+# STACK
+
+##  stacking config information
+##   #Box                   Prio- 
+##   #ID    Type      Exist rity  
+##   #--- ----------- ----- ----- 
+##   #  1 DGS-3120-48TC exist 32
+##   #  2 NOT_EXIST no   
+##   #  3 NOT_EXIST no   
+##   #  4 NOT_EXIST no   
+##   #  5 NOT_EXIST no   
+##   #  6 NOT_EXIST no   
+config stacking trap state enable
+config stacking log state enable
+config stacking force_master_role state disable
+
+# DEVICE
+
+config temperature threshold high 79
+config temperature threshold low 11
+config temperature trap state enable
+config temperature log state enable
+config fan trap state enable
+config power trap state enable
+
+# BASIC
+
+# ACCOUNT LIST
+create account admin admin
+*@&BAB8FiZs/+g90Z/GJDLCrWtV0nn3x7Dq
+*@&BAB8FiZs/+g90Z/GJDLCrWtV0nn3x7Dq
+
+# ACCOUNT END
+# PASSWORD ENCRYPTION
+enable password encryption 
+config serial_port auto_logout never
+enable web 80
+enable clipaging
+config terminal width 80
+disable command logging
+enable password_recovery
+config configuration trap save disable
+config configuration trap upload disable
+config configuration trap download disable
+
+# DEBUG
+
+debug config state enable
+debug config error_reboot enable
+
+# STORM
+
+config traffic control 1:1 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:2 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:3 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:4 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:5 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:6 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:7 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:8 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:9 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:10 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:11 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:12 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:13 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:14 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:15 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:16 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:17 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:18 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:19 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:20 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:21 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:22 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:23 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:24 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:25 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:26 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:27 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:28 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:29 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:30 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:31 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:32 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:33 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:34 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:35 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:36 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:37 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:38 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:39 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:40 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:41 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:42 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:43 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:44 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:45 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:46 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:47 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control 1:48 broadcast disable multicast disable unicast disable action drop broadcast_threshold 131072 multicast_threshold 131072 unicast_threshold 131072 countdown 0 time_interval 5 
+config traffic control auto_recover_time 0
+config traffic trap none
+config traffic control log state enable
+
+# LOOP_DETECT
+
+enable loopdetect
+config loopdetect recover_timer 3600 interval 1 mode port-based 
+config loopdetect log state enable
+config loopdetect ports 1:1 state enable
+config loopdetect ports 1:2 state enable
+config loopdetect ports 1:3 state enable
+config loopdetect ports 1:4 state enable
+config loopdetect ports 1:5 state enable
+config loopdetect ports 1:6 state enable
+config loopdetect ports 1:7 state enable
+config loopdetect ports 1:8 state enable
+config loopdetect ports 1:9 state enable
+config loopdetect ports 1:10 state enable
+config loopdetect ports 1:11 state enable
+config loopdetect ports 1:12 state enable
+config loopdetect ports 1:13 state enable
+config loopdetect ports 1:14 state enable
+config loopdetect ports 1:15 state enable
+config loopdetect ports 1:16 state enable
+config loopdetect ports 1:17 state enable
+config loopdetect ports 1:18 state enable
+config loopdetect ports 1:19 state enable
+config loopdetect ports 1:20 state enable
+config loopdetect ports 1:21 state enable
+config loopdetect ports 1:22 state enable
+config loopdetect ports 1:23 state enable
+config loopdetect ports 1:24 state enable
+config loopdetect ports 1:25 state enable
+config loopdetect ports 1:26 state enable
+config loopdetect ports 1:27 state enable
+config loopdetect ports 1:28 state enable
+config loopdetect ports 1:29 state enable
+config loopdetect ports 1:30 state enable
+config loopdetect ports 1:31 state enable
+config loopdetect ports 1:32 state enable
+config loopdetect ports 1:33 state enable
+config loopdetect ports 1:34 state enable
+config loopdetect ports 1:35 state enable
+config loopdetect ports 1:36 state enable
+config loopdetect ports 1:37 state enable
+config loopdetect ports 1:38 state enable
+config loopdetect ports 1:39 state enable
+config loopdetect ports 1:40 state enable
+config loopdetect ports 1:41 state enable
+config loopdetect ports 1:42 state enable
+config loopdetect ports 1:43 state enable
+config loopdetect ports 1:44 state enable
+config loopdetect ports 1:45 state enable
+config loopdetect ports 1:46 state enable
+config loopdetect ports 1:47 state disable
+config loopdetect ports 1:48 state disable
+config loopdetect trap none
+
+# GM
+
+disable sim
+config sim candidate
+config sim dp_interval 30
+config sim hold_time 100
+
+# GM_H
+
+
+# MIRROR
+
+create mirror group_id 2
+config mirror group_id 2 target_port 1:43 
+config mirror group_id 2 state enable
+config mirror group_id 2 add source ports 1:1,1:33 rx 
+config mirror group_id 2 add source ports 1:1,1:33 tx 
+enable mirror
+
+# QOS
+
+config 802.1p user_priority 0  2
+config 802.1p user_priority 1  0
+config 802.1p user_priority 2  1
+config 802.1p user_priority 3  3
+config 802.1p user_priority 4  4
+config 802.1p user_priority 5  5
+config 802.1p user_priority 6  6
+config 802.1p user_priority 7  7
+enable hol_prevention
+config 802.1p default_priority 1:1-1:48 0
+config bandwidth_control 1:1-1:48 rx_rate no_limit tx_rate no_limit
+config per_queue bandwidth_control ports 1:1-1:48 0 min_rate  no_limit  max_rate no_limit
+config per_queue bandwidth_control ports 1:1-1:48 1 min_rate  no_limit  max_rate no_limit
+config per_queue bandwidth_control ports 1:1-1:48 2 min_rate  no_limit  max_rate no_limit
+config per_queue bandwidth_control ports 1:1-1:48 3 min_rate  no_limit  max_rate no_limit
+config per_queue bandwidth_control ports 1:1-1:48 4 min_rate  no_limit  max_rate no_limit
+config per_queue bandwidth_control ports 1:1-1:48 5 min_rate  no_limit  max_rate no_limit
+config per_queue bandwidth_control ports 1:1-1:48 6 min_rate  no_limit  max_rate no_limit
+config per_queue bandwidth_control ports 1:1-1:48 7 min_rate  no_limit  max_rate no_limit
+config scheduling_mechanism ports 1:1-1:48 strict
+config scheduling ports 1:1-1:48 0  weight 1
+config scheduling ports 1:1-1:48 1  weight 2
+config scheduling ports 1:1-1:48 2  weight 3
+config scheduling ports 1:1-1:48 3  weight 4
+config scheduling ports 1:1-1:48 4  weight 5
+config scheduling ports 1:1-1:48 5  weight 6
+config scheduling ports 1:1-1:48 6  weight 7
+config scheduling ports 1:1-1:48 7  weight 8
+
+# SYSLOG
+
+config log_save_timing time_interval 1440
+enable syslog
+config system_severity trap emergency
+config system_severity log information
+create syslog host 1 ipaddress 10.0.7.22 severity informational facility local0 udp_port 9500 state enable 
+create syslog host 2 ipaddress 10.0.2.1 severity debug facility local7 udp_port 514 state enable 
+create syslog host 3 ipaddress 10.0.7.23 severity debug facility local0 udp_port 514 state enable 
+
+# TRAF-SEGMENTATION
+
+config traffic_segmentation 1:1-1:48 forward_list all
+
+# SSL
+
+disable ssl 
+enable ssl ciphersuite RSA_with_RC4_128_MD5 
+enable ssl ciphersuite RSA_with_3DES_EDE_CBC_SHA 
+enable ssl ciphersuite DHE_DSS_with_3DES_EDE_CBC_SHA 
+enable ssl ciphersuite RSA_EXPORT_with_RC4_40_MD5 
+config ssl cachetimeout 600 
+
+# PORT
+
+enable jumbo_frame
+config ports 1:1-1:38,1:40-1:44 speed auto  capability_advertised  10_half 10_full 100_half 100_full 1000_full  flow_control disable learning enable state enable mdix auto
+config ports 1:1-1:48 auto_speed_downgrade disable
+config ports 1:39 speed auto  capability_advertised  10_half 10_full 100_half 100_full 1000_full  flow_control disable learning enable state enable mdix auto description Broken port. Phone dont register
+config ports 1:45-1:46 medium_type copper speed auto  capability_advertised  10_half 10_full 100_half 100_full 1000_full flow_control disable learning enable state enable mdix auto
+config ports 1:45-1:48 medium_type fiber speed auto  capability_advertised  1000_full  auto_negotiation remote_fault_advertised disable flow_control disable learning enable state enable
+config ports 1:47 medium_type copper speed auto  capability_advertised  10_half 10_full 100_half 100_full 1000_full flow_control disable learning enable state enable mdix auto description to 1:1 port CSW
+config ports 1:48 medium_type copper speed auto  capability_advertised  10_half 10_full 100_half 100_full 1000_full flow_control disable learning enable state enable mdix auto description to 2:1 port CSW
+
+# EEE
+
+config eee ports 1:1-1:48 state disable
+
+# SFLOW
+
+enable sflow
+
+# OAM
+
+
+# DDM
+
+config ddm trap disable
+config ddm log enable
+config ddm ports 1:45-1:48 state enable shutdown alarm
+
+# MANAGEMENT
+
+enable snmp traps 
+enable snmp authenticate_traps 
+enable snmp linkchange_traps
+enable snmp
+config snmp system_location CSW1
+config snmp system_contact CSW1
+config snmp linkchange_traps ports 1:1-1:48 enable
+
+# TRAP
+
+config snmp coldstart_traps enable
+config snmp warmstart_traps enable
+config rmon trap rising_alarm enable
+config rmon trap falling_alarm enable
+
+# TR
+
+
+# PortGroup
+
+
+# IGMP_MULTICAST_VLAN
+
+config igmp_snooping multicast_vlan forward_unmatched disable
+
+# MLD_MULTICAST_VLAN
+
+config mld_snooping multicast_vlan forward_unmatched disable
+
+# VLAN
+
+enable pvid auto_assign
+config vlan default delete 1:1-1:48
+config vlan default advertisement enable
+create vlan floor_two tag 102
+config vlan floor_two add tagged 1:47-1:48
+config vlan floor_two add untagged 1:1-1:46 advertisement disable
+create vlan voice tag 109
+config vlan voice add tagged 1:47-1:48 advertisement disable
+disable gvrp
+disable asymmetric_vlan
+disable vlan_trunk
+config port_vlan 1:1-1:46 gvrp_state disable ingress_checking enable acceptable_frame admit_all pvid 102
+config port_vlan 1:47-1:48 gvrp_state disable ingress_checking enable acceptable_frame admit_all pvid 1
+
+# PORT_SECURITY
+
+config port_security system max_learning_addr no_limit
+config port_security trap state disable
+config port_security log state disable
+config port_security ports 1:1-1:29,1:31-1:38,1:40-1:48 admin_state disable max_learning_addr 32 action drop lock_address_mode deleteonreset
+config port_security ports 1:30 admin_state disable max_learning_addr 2 action drop lock_address_mode deleteonreset
+config port_security ports 1:39 admin_state enable max_learning_addr 1 action drop lock_address_mode deleteontimeout
+
+# ACL
+
+create access_profile profile_id 1 profile_name deny_ipv6 ipv6 destination_ipv6_mask FF02::1:3 
+config access_profile profile_id 1 add access_id 1 ipv6 destination_ipv6 FF02::1:3 port 1:17 deny 
+
+#CPU Interface Filter
+
+disable cpu_interface_filtering 
+
+# PROTOCOL_VLAN
+
+
+# PowerSaving
+
+config power_saving mode link_detection enable
+config power_saving mode length_detection disable
+config power_saving mode hibernation disable
+config power_saving mode led disable
+config power_saving mode port disable
+
+# LED-CTRL
+
+config led state enable
+
+# QINQ
+
+
+# RSPAN
+
+disable rspan
+
+# 8021X
+
+disable 802.1x
+config 802.1x auth_mode port_based
+config 802.1x auth_protocol radius_eap
+config 802.1x fwd_pdu system disable
+config 802.1x max_users 448
+config 802.1x authorization attributes radius enable
+config 802.1x capability ports 1:1-1:48 none
+config 802.1x auth_parameter ports 1:1-1:48 direction both port_control auto quiet_period 60 tx_period 30 supp_timeout 30 server_timeout 30 max_req 2 reauth_period 3600 enable_reauth disable 
+config 802.1x auth_parameter ports 1:1-1:48 max_users 16 
+
+# guestvlan
+
+
+# POE
+
+
+# NLB
+
+
+# MCFDB
+
+
+# FDB
+
+config fdb aging_time 300
+
+# RPCPortMapperFilter
+
+config filter rpc_portmapper all state disable
+
+# ADDRBIND
+
+config address_binding dhcp_snoop max_entry ports 1:1 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:2 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:3 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:4 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:5 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:6 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:7 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:8 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:9 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:10 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:11 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:12 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:13 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:14 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:15 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:16 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:17 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:18 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:19 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:20 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:21 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:22 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:23 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:24 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:25 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:26 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:27 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:28 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:29 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:30 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:31 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:32 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:33 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:34 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:35 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:36 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:37 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:38 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:39 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:40 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:41 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:42 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:43 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:44 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:45 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:46 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:47 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1:48 limit no_limit
+disable address_binding dhcp_snoop
+disable address_binding trap_log
+config address_binding dhcp snooping recovery_timer 300
+disable address_binding dhcp_snoop ipv6
+disable address_binding nd_snoop
+config address_binding dhcp_snoop max_entry ports 1:1-1:48 limit no_limit ipv6
+config address_binding nd_snoop ports 1:1-1:48 max_entry no_limit
+
+# NetBiosFilter
+
+config filter netbios all state disable
+config filter extensive_netbios all state disable
+
+# RADIUS
+
+
+# DoS
+
+config dos_prevention dos_type land_attack action drop state disable 
+config dos_prevention dos_type blat_attack action drop state disable 
+config dos_prevention dos_type tcp_null_scan action drop state disable 
+config dos_prevention dos_type tcp_xmasscan action drop state disable 
+config dos_prevention dos_type tcp_synfin action drop state disable 
+config dos_prevention dos_type tcp_syn_srcport_less_1024 action drop state disable 
+config dos_prevention dos_type ping_death_attack action drop state disable 
+config dos_prevention dos_type tcp_tiny_frag_attack action drop state disable 
+config dos_prevention trap disable
+config dos_prevention log disable
+
+# DhcpServerScreening
+
+config filter dhcp_server ports all state disable
+config filter dhcp_server ports 1:1-1:46 state enable
+config filter dhcp_server illegal_server_log_suppress_duration 5min
+config filter dhcp_server trap disable
+config filter dhcp_server log enable
+
+# PPPoE
+
+config pppoe circuit_id_insertion state disable
+config pppoe circuit_id_insertion ports 1:1-1:48 state enable circuit_id ip
+
+# sRED
+
+config dscp trust all state disable
+config dscp map all dscp_dscp 0 to 0 
+config dscp map all dscp_dscp 1 to 1 
+config dscp map all dscp_dscp 2 to 2 
+config dscp map all dscp_dscp 3 to 3 
+config dscp map all dscp_dscp 4 to 4 
+config dscp map all dscp_dscp 5 to 5 
+config dscp map all dscp_dscp 6 to 6 
+config dscp map all dscp_dscp 7 to 7 
+config dscp map all dscp_dscp 8 to 8 
+config dscp map all dscp_dscp 9 to 9 
+config dscp map all dscp_dscp 10 to 10 
+config dscp map all dscp_dscp 11 to 11 
+config dscp map all dscp_dscp 12 to 12 
+config dscp map all dscp_dscp 13 to 13 
+config dscp map all dscp_dscp 14 to 14 
+config dscp map all dscp_dscp 15 to 15 
+config dscp map all dscp_dscp 16 to 16 
+config dscp map all dscp_dscp 17 to 17 
+config dscp map all dscp_dscp 18 to 18 
+config dscp map all dscp_dscp 19 to 19 
+config dscp map all dscp_dscp 20 to 20 
+config dscp map all dscp_dscp 21 to 21 
+config dscp map all dscp_dscp 22 to 22 
+config dscp map all dscp_dscp 23 to 23 
+config dscp map all dscp_dscp 24 to 24 
+config dscp map all dscp_dscp 25 to 25 
+config dscp map all dscp_dscp 26 to 26 
+config dscp map all dscp_dscp 27 to 27 
+config dscp map all dscp_dscp 28 to 28 
+config dscp map all dscp_dscp 29 to 29 
+config dscp map all dscp_dscp 30 to 30 
+config dscp map all dscp_dscp 31 to 31 
+config dscp map all dscp_dscp 32 to 32 
+config dscp map all dscp_dscp 33 to 33 
+config dscp map all dscp_dscp 34 to 34 
+config dscp map all dscp_dscp 35 to 35 
+config dscp map all dscp_dscp 36 to 36 
+config dscp map all dscp_dscp 37 to 37 
+config dscp map all dscp_dscp 38 to 38 
+config dscp map all dscp_dscp 39 to 39 
+config dscp map all dscp_dscp 40 to 40 
+config dscp map all dscp_dscp 41 to 41 
+config dscp map all dscp_dscp 42 to 42 
+config dscp map all dscp_dscp 43 to 43 
+config dscp map all dscp_dscp 44 to 44 
+config dscp map all dscp_dscp 45 to 45 
+config dscp map all dscp_dscp 46 to 46 
+config dscp map all dscp_dscp 47 to 47 
+config dscp map all dscp_dscp 48 to 48 
+config dscp map all dscp_dscp 49 to 49 
+config dscp map all dscp_dscp 50 to 50 
+config dscp map all dscp_dscp 51 to 51 
+config dscp map all dscp_dscp 52 to 52 
+config dscp map all dscp_dscp 53 to 53 
+config dscp map all dscp_dscp 54 to 54 
+config dscp map all dscp_dscp 55 to 55 
+config dscp map all dscp_dscp 56 to 56 
+config dscp map all dscp_dscp 57 to 57 
+config dscp map all dscp_dscp 58 to 58 
+config dscp map all dscp_dscp 59 to 59 
+config dscp map all dscp_dscp 60 to 60 
+config dscp map all dscp_dscp 61 to 61 
+config dscp map all dscp_dscp 62 to 62 
+config dscp map all dscp_dscp 63 to 63 
+config dscp map all dscp_priority 0-7 to 0
+config dscp map all dscp_priority 8-15 to 1
+config dscp map all dscp_priority 16-23 to 2
+config dscp map all dscp_priority 24-31 to 3
+config dscp map all dscp_priority 32-39 to 4
+config dscp map all dscp_priority 40-47 to 5
+config dscp map all dscp_priority 48-55 to 6
+config dscp map all dscp_priority 56-63 to 7
+
+# ARPSpoofingPrevention
+
+
+# WRED
+
+config wred profile default tcp green min_threshold 50 max_threshold 100 max_drop_rate 50
+config wred profile default tcp yellow min_threshold 50 max_threshold 100 max_drop_rate 50
+config wred profile default tcp red min_threshold 50 max_threshold 100 max_drop_rate 50
+config wred profile default non_tcp green min_threshold 50 max_threshold 100 max_drop_rate 50
+config wred profile default non_tcp yellow min_threshold 50 max_threshold 100 max_drop_rate 50
+config wred profile default non_tcp red min_threshold 50 max_threshold 100 max_drop_rate 50
+disable wred
+config wred ports 1:1-1:48 cos 0 profile default
+config wred ports 1:1-1:48 cos 0 weight 9
+config wred ports 1:1-1:48 cos 1 profile default
+config wred ports 1:1-1:48 cos 1 weight 9
+config wred ports 1:1-1:48 cos 2 profile default
+config wred ports 1:1-1:48 cos 2 weight 9
+config wred ports 1:1-1:48 cos 3 profile default
+config wred ports 1:1-1:48 cos 3 weight 9
+config wred ports 1:1-1:48 cos 4 profile default
+config wred ports 1:1-1:48 cos 4 weight 9
+config wred ports 1:1-1:48 cos 5 profile default
+config wred ports 1:1-1:48 cos 5 weight 9
+config wred ports 1:1-1:48 cos 6 profile default
+config wred ports 1:1-1:48 cos 6 weight 9
+config wred ports 1:1-1:48 cos 7 profile default
+config wred ports 1:1-1:48 cos 7 weight 9
+
+# MAC_ADDRESS_TABLE_NOTIFICATION
+
+disable mac_notification
+config mac_notification interval 1 historysize 50
+config mac_notification ports 1:1-1:48 disable
+
+# STP
+
+ config stp version mstp
+ config stp maxage 20 maxhops 20 forwarddelay 15 txholdcount 6 fbpdu disable nni_bpdu_addr dot1d
+ config stp priority 32768 instance_id 0 
+ create stp instance_id 1 
+ config stp instance_id 1 add_vlan 101-103
+ config stp priority 32768 instance_id 1 
+ create stp instance_id 2 
+ config stp instance_id 2 add_vlan 104-106
+ config stp priority 32768 instance_id 2 
+ create stp instance_id 3 
+ config stp instance_id 3 add_vlan 107
+ config stp priority 32768 instance_id 3 
+ create stp instance_id 4 
+ config stp instance_id 4 add_vlan 108-109
+ config stp priority 32768 instance_id 4 
+ create stp instance_id 5 
+ config stp instance_id 5 add_vlan 111
+ config stp priority 32768 instance_id 5 
+ config stp ports 1:1-1:16,1:18-1:20,1:22-1:38,1:40,1:42-1:46 externalCost auto  edge false p2p auto state disable restricted_role false restricted_tcn false
+ config stp ports 1:1-1:48 hellotime 2 
+ config stp mst_ports 1:1-1:48 instance_id 0 internalCost auto priority 128
+config stp ports 1:1-1:48 fbpdu disable
+ config stp ports 1:17,1:21,1:39 externalCost auto  edge true p2p auto state disable restricted_role false restricted_tcn false
+ config stp ports 1:41 externalCost auto  edge false p2p auto state disable restricted_role true restricted_tcn true
+ config stp ports 1:47-1:48 externalCost auto  edge false p2p auto state enable restricted_role false restricted_tcn false
+ config stp mst_ports 1:1-1:48 instance_id 1 internalCost auto priority 128
+ config stp mst_ports 1:1-1:48 instance_id 2 internalCost auto priority 128
+ config stp mst_ports 1:1-1:48 instance_id 3 internalCost auto priority 128
+ config stp mst_ports 1:1-1:48 instance_id 4 internalCost auto priority 128
+ config stp mst_ports 1:1-1:48 instance_id 5 internalCost auto priority 128
+ config stp mst_config_id name TERRASOFT revision_level 1
+ config stp trap new_root enable 
+ config stp trap topo_change  enable 
+ enable stp
+
+# L2PT
+
+disable l2protocol_tunnel
+config l2protocol_tunnel ports all type none
+
+# BPDU_PROTECTION
+
+enable bpdu_protection
+config bpdu_protection ports 1:1-1:46 state enable  
+config bpdu_protection ports 1:1-1:48 mode shutdown
+
+# SAFEGUARD_ENGINE
+
+config safeguard_engine state disable utilization rising 30 falling 20 trap_log disable mode fuzzy
+
+# BANNER_PROMP
+
+config command_prompt default
+config greeting_message default
+
+# SSH
+
+ config ssh algorithm 3DES enable
+ config ssh algorithm AES128 enable
+ config ssh algorithm AES192 enable
+ config ssh algorithm AES256 enable
+ config ssh algorithm arcfour enable
+ config ssh algorithm blowfish enable
+ config ssh algorithm cast128 enable
+ config ssh algorithm twofish128 enable
+ config ssh algorithm twofish192 enable
+ config ssh algorithm twofish256 enable
+ config ssh algorithm MD5 enable
+ config ssh algorithm SHA1 enable
+ config ssh algorithm RSA enable
+ config ssh algorithm DSA enable
+ config ssh authmode password enable
+ config ssh authmode publickey enable
+ config ssh authmode hostbased enable
+ config ssh server maxsession 8
+ config ssh server contimeout 600
+ config ssh server authfail 2
+ config ssh server rekey never
+ config ssh server port 22
+ config ssh user admin authmode password
+ config ssh publickey bypass_login_screen state disable
+ enable ssh
+
+# TELNETS
+
+disable telnet
+
+# BCPING
+
+
+# SMTP
+
+disable smtp
+config smtp server_port 25
+
+# SNTP
+
+enable sntp
+config time_zone operator + hour 2 min 0
+config sntp primary 10.0.7.1 poll-interval 720
+config dst annual s_date 29 s_mth 4 s_time 0:0 e_date 12 e_mth 10 e_time 0:0 offset 60
+config dst repeating s_week last s_day sun s_mth 3 s_time 0:0 e_week last e_day sun e_mth 10 e_time 0:0 offset 60
+
+# MULTICAST_FILTER
+
+
+# LACP
+
+config link_aggregation algorithm mac_source
+create link_aggregation group_id 1 type lacp
+config link_aggregation group_id 1 master_port 1:47 ports 1:47-1:48 state enable
+config link_aggregation group_id 1 trap disable
+config lacp_port 1:1,1:33,1:47-1:48 mode active
+config lacp_port 1:2-1:32,1:34-1:46 mode passive
+
+# IP
+
+config ipif_mac_mapping ipif System mac_offset 0
+config ipif System ipaddress 10.0.2.252/24 vlan floor_two
+config ipif System dhcpv6_client disable
+config ipif System proxy_arp disable local disable
+config ipif System dhcp_option12 state disable
+disable autoconfig 
+
+# SNMPv3
+
+delete snmp community public
+delete snmp community private
+delete snmp user initial
+delete snmp group initial
+delete snmp view restricted all
+delete snmp view CommunityView all
+config snmp engineID 800000ab03bcf685b658f0
+create snmp view CommunityView 1 view_type included
+create snmp view CommunityView 1.3.6.1.2 view_type included
+create snmp view CommunityView 1.3.6.1.4 view_type included
+create snmp view CommunityView 1.3.6.1.6.3 view_type excluded
+create snmp view CommunityView 1.3.6.1.2.1.1 view_type included
+create snmp view CommunityView 1.3.6.1.2.1.11 view_type included
+create snmp view CommunityView 1.3.6.1.6.3.1 view_type included
+create snmp view CommunityView 1.3.6.1.2.1.1.3.0 view_type included
+create snmp view CommunityView 1.3.6.1.6.3.10.2.1 view_type included
+create snmp view CommunityView 1.3.6.1.6.3.11.2.1 view_type included
+create snmp view CommunityView 1.3.6.1.6.3.15.1.1 view_type included
+create snmp view CommunityView 1.3.6.1.2.1.2.2.1.7 view_type included
+create snmp view CommunityView 1.3.6.1.2.1.2.2.1.20 view_type included
+create snmp view CommunityView 1.3.6.1.4.1.9.5.1.2.13.0 view_type included
+create snmp view CommunityView 1.3.6.1.4.1.9.9.48.1.1.1.5.1 view_type included
+create snmp view CommunityView 1.3.6.1.4.1.9.9.109.1.1.1.1.5.1 view_type included
+create snmp group d-link v3  auth_priv read_view CommunityView write_view CommunityView 
+create snmp group terrasoft+ v1 read_view CommunityView notify_view CommunityView 
+create snmp group terrasoft+ v2c read_view CommunityView notify_view CommunityView 
+create snmp community terrasoft+ view CommunityView read_only
+create snmp user snmp d-link encrypted by_key auth md5 293504f24c34ef4118aeb0b7ea5f6ff8 priv des 97e858085cb72df7d2abf0cd4268d7b6 
+disable community_encryption
+
+# VOICEVLAN
+
+enable voice_vlan  vlanid 109
+config voice_vlan oui add 00-0B-82-00-00-00 FF-FF-FF-00-00-00 description Grandstream
+config voice_vlan ports 1:1-1:48 state enable
+config voice_vlan ports 1:47-1:48 mode auto tag
+
+# SURVEILLANCEVLAN
+
+
+# SD_Card_Management
+
+
+# ERPS
+
+ disable erps
+ config erps log disable 
+ config erps trap disable 
+
+# UDP_HELPER
+
+disable udp_helper
+
+# CFM
+
+
+# JWAC
+
+config jwac switch_http_port 80
+config jwac clear_quarantine_server_url
+config jwac clear_quarantine_server_url ipv6
+config jwac radius_protocol pap
+disable jwac quarantine_server_monitor
+config jwac quarantine_server_error_timeout 30
+enable jwac forcible_logout
+enable jwac udp_filtering
+enable jwac redirect
+config jwac redirect destination quarantine_server delay_time 1
+disable jwac
+config jwac authenticate_page english
+config jwac authorization attributes radius enable
+config jwac authorization attributes local enable
+config jwac ports 1:1-1:48 max_authenticating_host 50 aging_time 1440 idle_time infinite block_time 60
+
+# WAC
+
+ config wac switch_http_port 80
+ config wac method local
+ config wac authorization attributes local enable
+ config wac authorization attributes radius enable
+ disable wac
+ config wac authentication_page element login_window_title Authentication Login
+ config wac authentication_page element user_name_title User Name
+ config wac authentication_page element password_title Password
+ config wac authentication_page element logout_window_title Logout From The Network
+ config wac ports 1:1-1:48 aging_time 1440 idle_time infinite block_time 60
+
+# LLDP
+
+disable lldp
+config lldp message_tx_interval 30
+config lldp tx_delay 2
+config lldp message_tx_hold_multiplier 4
+config lldp reinit_delay 2
+config lldp notification_interval 5
+config lldp ports 1:1-1:48 notification disable
+config lldp ports 1:1-1:48 admin_status tx_and_rx
+
+# MAC-based_Access_Control
+
+disable mac_based_access_control
+config mac_based_access_control authorization attributes radius enable local enable
+config mac_based_access_control ports 1:1-1:48 state disable
+config mac_based_access_control ports  1:1 max_users 128
+config mac_based_access_control ports  1:1 aging_time 1440
+config mac_based_access_control ports  1:1 block_time 300
+config mac_based_access_control ports  1:2 max_users 128
+config mac_based_access_control ports  1:2 aging_time 1440
+config mac_based_access_control ports  1:2 block_time 300
+config mac_based_access_control ports  1:3 max_users 128
+config mac_based_access_control ports  1:3 aging_time 1440
+config mac_based_access_control ports  1:3 block_time 300
+config mac_based_access_control ports  1:4 max_users 128
+config mac_based_access_control ports  1:4 aging_time 1440
+config mac_based_access_control ports  1:4 block_time 300
+config mac_based_access_control ports  1:5 max_users 128
+config mac_based_access_control ports  1:5 aging_time 1440
+config mac_based_access_control ports  1:5 block_time 300
+config mac_based_access_control ports  1:6 max_users 128
+config mac_based_access_control ports  1:6 aging_time 1440
+config mac_based_access_control ports  1:6 block_time 300
+config mac_based_access_control ports  1:7 max_users 128
+config mac_based_access_control ports  1:7 aging_time 1440
+config mac_based_access_control ports  1:7 block_time 300
+config mac_based_access_control ports  1:8 max_users 128
+config mac_based_access_control ports  1:8 aging_time 1440
+config mac_based_access_control ports  1:8 block_time 300
+config mac_based_access_control ports  1:9 max_users 128
+config mac_based_access_control ports  1:9 aging_time 1440
+config mac_based_access_control ports  1:9 block_time 300
+config mac_based_access_control ports  1:10 max_users 128
+config mac_based_access_control ports  1:10 aging_time 1440
+config mac_based_access_control ports  1:10 block_time 300
+config mac_based_access_control ports  1:11 max_users 128
+config mac_based_access_control ports  1:11 aging_time 1440
+config mac_based_access_control ports  1:11 block_time 300
+config mac_based_access_control ports  1:12 max_users 128
+config mac_based_access_control ports  1:12 aging_time 1440
+config mac_based_access_control ports  1:12 block_time 300
+config mac_based_access_control ports  1:13 max_users 128
+config mac_based_access_control ports  1:13 aging_time 1440
+config mac_based_access_control ports  1:13 block_time 300
+config mac_based_access_control ports  1:14 max_users 128
+config mac_based_access_control ports  1:14 aging_time 1440
+config mac_based_access_control ports  1:14 block_time 300
+config mac_based_access_control ports  1:15 max_users 128
+config mac_based_access_control ports  1:15 aging_time 1440
+config mac_based_access_control ports  1:15 block_time 300
+config mac_based_access_control ports  1:16 max_users 128
+config mac_based_access_control ports  1:16 aging_time 1440
+config mac_based_access_control ports  1:16 block_time 300
+config mac_based_access_control ports  1:17 max_users 128
+config mac_based_access_control ports  1:17 aging_time 1440
+config mac_based_access_control ports  1:17 block_time 300
+config mac_based_access_control ports  1:18 max_users 128
+config mac_based_access_control ports  1:18 aging_time 1440
+config mac_based_access_control ports  1:18 block_time 300
+config mac_based_access_control ports  1:19 max_users 128
+config mac_based_access_control ports  1:19 aging_time 1440
+config mac_based_access_control ports  1:19 block_time 300
+config mac_based_access_control ports  1:20 max_users 128
+config mac_based_access_control ports  1:20 aging_time 1440
+config mac_based_access_control ports  1:20 block_time 300
+config mac_based_access_control ports  1:21 max_users 128
+config mac_based_access_control ports  1:21 aging_time 1440
+config mac_based_access_control ports  1:21 block_time 300
+config mac_based_access_control ports  1:22 max_users 128
+config mac_based_access_control ports  1:22 aging_time 1440
+config mac_based_access_control ports  1:22 block_time 300
+config mac_based_access_control ports  1:23 max_users 128
+config mac_based_access_control ports  1:23 aging_time 1440
+config mac_based_access_control ports  1:23 block_time 300
+config mac_based_access_control ports  1:24 max_users 128
+config mac_based_access_control ports  1:24 aging_time 1440
+config mac_based_access_control ports  1:24 block_time 300
+config mac_based_access_control ports  1:25 max_users 128
+config mac_based_access_control ports  1:25 aging_time 1440
+config mac_based_access_control ports  1:25 block_time 300
+config mac_based_access_control ports  1:26 max_users 128
+config mac_based_access_control ports  1:26 aging_time 1440
+config mac_based_access_control ports  1:26 block_time 300
+config mac_based_access_control ports  1:27 max_users 128
+config mac_based_access_control ports  1:27 aging_time 1440
+config mac_based_access_control ports  1:27 block_time 300
+config mac_based_access_control ports  1:28 max_users 128
+config mac_based_access_control ports  1:28 aging_time 1440
+config mac_based_access_control ports  1:28 block_time 300
+config mac_based_access_control ports  1:29 max_users 128
+config mac_based_access_control ports  1:29 aging_time 1440
+config mac_based_access_control ports  1:29 block_time 300
+config mac_based_access_control ports  1:30 max_users 128
+config mac_based_access_control ports  1:30 aging_time 1440
+config mac_based_access_control ports  1:30 block_time 300
+config mac_based_access_control ports  1:31 max_users 128
+config mac_based_access_control ports  1:31 aging_time 1440
+config mac_based_access_control ports  1:31 block_time 300
+config mac_based_access_control ports  1:32 max_users 128
+config mac_based_access_control ports  1:32 aging_time 1440
+config mac_based_access_control ports  1:32 block_time 300
+config mac_based_access_control ports  1:33 max_users 128
+config mac_based_access_control ports  1:33 aging_time 1440
+config mac_based_access_control ports  1:33 block_time 300
+config mac_based_access_control ports  1:34 max_users 128
+config mac_based_access_control ports  1:34 aging_time 1440
+config mac_based_access_control ports  1:34 block_time 300
+config mac_based_access_control ports  1:35 max_users 128
+config mac_based_access_control ports  1:35 aging_time 1440
+config mac_based_access_control ports  1:35 block_time 300
+config mac_based_access_control ports  1:36 max_users 128
+config mac_based_access_control ports  1:36 aging_time 1440
+config mac_based_access_control ports  1:36 block_time 300
+config mac_based_access_control ports  1:37 max_users 128
+config mac_based_access_control ports  1:37 aging_time 1440
+config mac_based_access_control ports  1:37 block_time 300
+config mac_based_access_control ports  1:38 max_users 128
+config mac_based_access_control ports  1:38 aging_time 1440
+config mac_based_access_control ports  1:38 block_time 300
+config mac_based_access_control ports  1:39 max_users 128
+config mac_based_access_control ports  1:39 aging_time 1440
+config mac_based_access_control ports  1:39 block_time 300
+config mac_based_access_control ports  1:40 max_users 128
+config mac_based_access_control ports  1:40 aging_time 1440
+config mac_based_access_control ports  1:40 block_time 300
+config mac_based_access_control ports  1:41 max_users 128
+config mac_based_access_control ports  1:41 aging_time 1440
+config mac_based_access_control ports  1:41 block_time 300
+config mac_based_access_control ports  1:42 max_users 128
+config mac_based_access_control ports  1:42 aging_time 1440
+config mac_based_access_control ports  1:42 block_time 300
+config mac_based_access_control ports  1:43 max_users 128
+config mac_based_access_control ports  1:43 aging_time 1440
+config mac_based_access_control ports  1:43 block_time 300
+config mac_based_access_control ports  1:44 max_users 128
+config mac_based_access_control ports  1:44 aging_time 1440
+config mac_based_access_control ports  1:44 block_time 300
+config mac_based_access_control ports  1:45 max_users 128
+config mac_based_access_control ports  1:45 aging_time 1440
+config mac_based_access_control ports  1:45 block_time 300
+config mac_based_access_control ports  1:46 max_users 128
+config mac_based_access_control ports  1:46 aging_time 1440
+config mac_based_access_control ports  1:46 block_time 300
+config mac_based_access_control ports  1:47 max_users 128
+config mac_based_access_control ports  1:47 aging_time 1440
+config mac_based_access_control ports  1:47 block_time 300
+config mac_based_access_control ports  1:48 max_users 128
+config mac_based_access_control ports  1:48 aging_time 1440
+config mac_based_access_control ports  1:48 block_time 300
+config mac_based_access_control ports  1:1-1:48 mode host_based
+config mac_based_access_control method local
+config mac_based_access_control password default
+config mac_based_access_control password_type manual_string
+config mac_based_access_control max_users no_limit
+config mac_based_access_control trap state enable
+config mac_based_access_control log state enable
+
+# MCFILTER
+
+
+# COMPOUND_AUTHENTICATION
+
+ config authentication ports 1:1-1:48 auth_mode host_based
+ config authentication ports 1:1-1:48 multi_authen_methods none
+ enable authorization attributes
+ config authentication server failover block
+ config authentication mac_format case uppercase
+ config authentication mac_format delimiter none
+ config authentication mac_format delimiter number 5
+
+# LLDP-MED
+
+config lldp_med fast_start repeat_count 4
+config lldp_med log state disable
+config lldp_med notification topo_change ports 1:1 state disable
+config lldp_med notification topo_change ports 1:2 state disable
+config lldp_med notification topo_change ports 1:3 state disable
+config lldp_med notification topo_change ports 1:4 state disable
+config lldp_med notification topo_change ports 1:5 state disable
+config lldp_med notification topo_change ports 1:6 state disable
+config lldp_med notification topo_change ports 1:7 state disable
+config lldp_med notification topo_change ports 1:8 state disable
+config lldp_med notification topo_change ports 1:9 state disable
+config lldp_med notification topo_change ports 1:10 state disable
+config lldp_med notification topo_change ports 1:11 state disable
+config lldp_med notification topo_change ports 1:12 state disable
+config lldp_med notification topo_change ports 1:13 state disable
+config lldp_med notification topo_change ports 1:14 state disable
+config lldp_med notification topo_change ports 1:15 state disable
+config lldp_med notification topo_change ports 1:16 state disable
+config lldp_med notification topo_change ports 1:17 state disable
+config lldp_med notification topo_change ports 1:18 state disable
+config lldp_med notification topo_change ports 1:19 state disable
+config lldp_med notification topo_change ports 1:20 state disable
+config lldp_med notification topo_change ports 1:21 state disable
+config lldp_med notification topo_change ports 1:22 state disable
+config lldp_med notification topo_change ports 1:23 state disable
+config lldp_med notification topo_change ports 1:24 state disable
+config lldp_med notification topo_change ports 1:25 state disable
+config lldp_med notification topo_change ports 1:26 state disable
+config lldp_med notification topo_change ports 1:27 state disable
+config lldp_med notification topo_change ports 1:28 state disable
+config lldp_med notification topo_change ports 1:29 state disable
+config lldp_med notification topo_change ports 1:30 state disable
+config lldp_med notification topo_change ports 1:31 state disable
+config lldp_med notification topo_change ports 1:32 state disable
+config lldp_med notification topo_change ports 1:33 state disable
+config lldp_med notification topo_change ports 1:34 state disable
+config lldp_med notification topo_change ports 1:35 state disable
+config lldp_med notification topo_change ports 1:36 state disable
+config lldp_med notification topo_change ports 1:37 state disable
+config lldp_med notification topo_change ports 1:38 state disable
+config lldp_med notification topo_change ports 1:39 state disable
+config lldp_med notification topo_change ports 1:40 state disable
+config lldp_med notification topo_change ports 1:41 state disable
+config lldp_med notification topo_change ports 1:42 state disable
+config lldp_med notification topo_change ports 1:43 state disable
+config lldp_med notification topo_change ports 1:44 state disable
+config lldp_med notification topo_change ports 1:45 state disable
+config lldp_med notification topo_change ports 1:46 state disable
+config lldp_med notification topo_change ports 1:47 state disable
+config lldp_med notification topo_change ports 1:48 state disable
+
+# IGMP_SNOOPING
+
+config igmp_snooping data_driven_learning max_learned_entry 128
+config igmp_snooping vlan_name default fast_leave disable proxy_reporting state disable source_ip 0.0.0.0 state disable 
+config igmp_snooping querier vlan_name default query_interval 125 max_response_time 10 robustness_variable 2 last_member_query_interval 1 state disable version 3
+config igmp_snooping data_driven_learning vlan_name default state enable aged_out disable expiry_time 260 
+config igmp_snooping vlan_name floor_two fast_leave disable proxy_reporting state disable source_ip 0.0.0.0 state disable 
+config igmp_snooping querier vlan_name floor_two query_interval 125 max_response_time 10 robustness_variable 2 last_member_query_interval 1 state disable version 3
+config igmp_snooping data_driven_learning vlan_name floor_two state enable aged_out disable expiry_time 260 
+config igmp_snooping vlan_name voice fast_leave disable proxy_reporting state disable source_ip 0.0.0.0 state disable 
+config igmp_snooping querier vlan_name voice query_interval 125 max_response_time 10 robustness_variable 2 last_member_query_interval 1 state disable version 3
+config igmp_snooping data_driven_learning vlan_name voice state enable aged_out disable expiry_time 260 
+
+# MLDSNP
+
+config mld_snooping data_driven_learning max_learned_entry 128
+config mld_snooping vlan_name default fast_done disable  proxy_reporting state disable source_ip :: state disable 
+config mld_snooping querier vlan_name default query_interval 125 max_response_time 10 robustness_variable 2 last_listener_query_interval 1 state disable version 2
+config mld_snooping data_driven_learning vlan_name default state enable aged_out disable expiry_time 260 
+config mld_snooping vlan_name floor_two fast_done disable  proxy_reporting state disable source_ip :: state disable 
+config mld_snooping querier vlan_name floor_two query_interval 125 max_response_time 10 robustness_variable 2 last_listener_query_interval 1 state disable version 2
+config mld_snooping data_driven_learning vlan_name floor_two state enable aged_out disable expiry_time 260 
+config mld_snooping vlan_name voice fast_done disable  proxy_reporting state disable source_ip :: state disable 
+config mld_snooping querier vlan_name voice query_interval 125 max_response_time 10 robustness_variable 2 last_listener_query_interval 1 state disable version 2
+config mld_snooping data_driven_learning vlan_name voice state enable aged_out disable expiry_time 260 
+
+# ACCESS_AUTHENTICATION_CONTROL
+
+config authen_login default method  local
+config authen_enable default method  local_enable
+config accounting default method  none
+config authen application console login default
+config authen application console enable default
+config authen application telnet login default
+config authen application telnet enable default
+config authen application ssh login default
+config authen application ssh enable default
+config authen application http login default
+config authen application http enable default
+disable aaa_server_password_encryption
+disable authen_policy
+config authen parameter response_timeout 30
+config authen parameter attempt 3
+config admin local_enable encrypt sha_1 *@&2jmj7l5rSw0yVb/vlWAYkK/YBwmwMs6D
+config accounting service network state disable
+config accounting service shell state disable
+config accounting service system state disable
+config accounting service command administrator none
+config accounting service command operator none
+config accounting service command power_user none
+config accounting service command user none
+
+# DHCP_LOCAL_RELAY
+
+disable dhcp_local_relay
+
+# AAA_LOCAL_ENABLE_PASSWORD
+
+# AAA ADMIN PWD LIST
+config admin local_enable encrypt sha_1 *@&2jmj7l5rSw0yVb/vlWAYkK/YBwmwMs6D
+# AAA ADMIN PWD END
+
+# DHCP_RELAY
+
+disable dhcp_relay
+config dhcp_relay hops 4 time 0 
+config dhcp_relay option_82 state disable
+config dhcp_relay option_82 check disable
+config dhcp_relay option_82 policy replace
+config dhcp_relay option_82 remote_id  default
+config dhcp_relay option_82 circuit_id  default
+config dhcp_relay option_60 state disable
+config dhcp_relay option_61 state disable
+config dhcp_relay option_60 default mode drop
+config dhcp_relay option_61 default drop
+
+# NDP
+
+config ipv6 nd ns ipif System retrans_time 0
+
+# ARP
+
+config arp_aging time 20
+config gratuitous_arp send ipif_status_up disable
+config gratuitous_arp send dup_ip_detected disable
+config gratuitous_arp learning disable
+
+# SNP_AUTH
+
+
+# ROUTE
+
+create iproute default 10.0.2.254 1 primary
+
+# RELAY6
+
+config dhcpv6_relay hop_count  4 
+disable dhcpv6_relay 
+config dhcpv6_relay option_37 state disable check disable 
+config dhcpv6_relay option_37 remote_id default
+config dhcpv6_relay ipif System state enable
+
+#-------------------------------------------------------------------
+#             End of configuration file for DGS-3120-48TC
+#-------------------------------------------------------------------
