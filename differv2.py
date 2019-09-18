@@ -14,6 +14,6 @@ diff = d.compare(text1_lines, text2_lines)
 for i in diff:
     print(i)
 '''   
-#print('\n'.join(diff))
+print('\n'.join(diff))
 
-print(list(d.compare(text1_lines, text2_lines))
+#print(list(d.compare(text1_lines, text2_lines)))
