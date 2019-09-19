@@ -17,3 +17,18 @@ for i in diff:
 print('\n'.join(diff))
 
 #print(list(d.compare(text1_lines, text2_lines)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
