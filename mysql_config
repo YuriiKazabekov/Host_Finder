@@ -1,0 +1,4 @@
+/root/.my.cnf 
+7IVCwuCKXd
+	
+CREATE USER 'myapp'@'localhost' IDENTIFIED BY 'Mad_H0rse';
