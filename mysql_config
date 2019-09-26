@@ -2,3 +2,30 @@
 7IVCwuCKXd
 	
 CREATE USER 'myapp'@'localhost' IDENTIFIED BY 'Mad_H0rse';
+
+GRANT ALL PRIVILEGES ON database.myapp TO 'myapp'@'localhost' WITH GRANT OPTION;
+
+UPDATE mysql.user SET Grant_priv='Y', Super_priv='Y' WHERE User='myapp';
+F
+
+
+
+db schema
+
+
+fdb 
+| mac-address | vlan ID | switch IP | port number | time of adding | time of checking (время последней активности) |
+lease
+| mac-address | IP address | host name | port number | 
+
+
+fdb
+for mac-address in fdb-lists
+1 if mac-address in fdb and  vlan ID or switch IP or port number diference rewrite row
+2 if mac-address in fdb and  vlan ID and switch IP and port number same change time of checking
+3 if mac-address not in fdb add new row
+
+
+lease
+for mac-address in lease-lists
+1 if mac-address in lease-lists and IP address or host name diference rewrite row
