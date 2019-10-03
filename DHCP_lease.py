@@ -1,4 +1,4 @@
-
+import subprocess
 import pexpect
 import getpass
 from init import *
@@ -16,12 +16,15 @@ DHCP_ip = ['10.0.7.199']
 Lease_list = ['10.0.1.0', '10.0.2.0', '10.0.3.0', '10.0.4.0','10.0.5.0', '10.0.6.0', '10.0.16.0', '10.0.20.0', '10.0.24.0', '10.10.30.0', '10.10.31.0' ]              
 
 
+
 for ip in DHCP_ip:
     print('Connection to device {}'.format(ip))
     with pexpect.spawn('ssh -l {} {}'.format(DHCP_user, ip)) as ssh:        #-oKexAlgorithms=+diffie-hellman-group1-sha1 -c aes256-cbc ad it for connecting to old devices
-
-        #ssh.expect('[(yes/no?)>]')
-        #ssh.sendline('yes')
+        '''try:
+            ssh.expect('[(yes/no?)>]')
+            ssh.sendline('yes')
+        except:
+            pass'''
 
         ssh.expect('password:')
         ssh.sendline(DHCP_password)
@@ -36,7 +39,7 @@ for ip in DHCP_ip:
         ssh.expect('[>]')
         
         for lease in Lease_list:
-            ssh.sendline(r'Get-DhcpServerv4Lease -ScopeId {} | Select-Object -Property IPAddress, HostName, ClientId, AddressState, LeaseExpiryTime |  Export-Csv -Path C:\Users\Y.Kazabekov\{}.csv'.format(lease, lease))
+            ssh.sendline(r'Get-DhcpServerv4Lease -ScopeId {} | Select-Object -Property ClientId, IPAddress, HostName |  Export-Csv -Path C:\Users\Y.Kazabekov\{}.csv'.format(lease, lease))
         #ssh.sendline(r'Get-DhcpServerv4Lease -ScopeId 10.0.2.0 |  Export-Csv -Path C:\Users\Y.Kazabekov\10.0.2.0.csv')
         
         
@@ -54,9 +57,8 @@ for ip in DHCP_ip:
         ssh.close()
 
 
-
-
-
+for ip in Lease_list:
+    subprocess.call(["rm", "-r", "/home/appliance/venv/lease/{}.csv".format(ip)])
 
 
 
@@ -84,10 +86,9 @@ for ip in DHCP_ip:
         ssh.expect('winscp>')
         
         for lease in Lease_list:
-            ssh.sendline(r'put "C:\Users\Y.Kazabekov\{}.csv " /home/appliance/data/lease/'.format(lease))
-        #ssh.sendline(r'put "C:\Users\Y.Kazabekov\10.0.1.0.csv" /home/appliance/data/lease/')
+            ssh.sendline(r'put "C:\Users\Y.Kazabekov\{}.csv " /home/appliance/venv/lease/'.format(lease))
+        #ssh.sendline(r'put "C:\Users\Y.Kazabekov\10.0.1.0.csv" /home/appliance/venv/lease/')
         
         ssh.expect('winscp>')
         ssh.sendline('exit')
         ssh.close()
-        

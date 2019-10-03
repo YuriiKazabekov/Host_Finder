@@ -41,7 +41,7 @@ for ip in ACSW_ip:
         bbb = ssh.before.decode('ascii')
         
         
-        f = open('/mnt/c/Users/Y.Kazabekov/projects/Network_utilities/fdb/{}_fdb.txt'.format(ip), 'w')
+        f = open('/home/appliance/venv/fdb/{}_fdb.txt'.format(ip), 'w')
         f.write(bbb)  # python will convert \n to os.linesep
         f.close()
         
@@ -50,7 +50,7 @@ for ip in ACSW_ip:
         ssh.close()
 
 
-    with open('/mnt/c/Users/Y.Kazabekov/projects/Network_utilities/fdb/{}_fdb.txt'.format(ip)) as file:
+    with open('/home/appliance/venv/fdb/{}_fdb.txt'.format(ip)) as file:
         array = [row.strip() for row in file]
         new_array = []
       
@@ -65,7 +65,7 @@ for ip in ACSW_ip:
         if 'T1' not in i :
             #i = ' '.join(i.split()) #Оставляет только один пробел
             final_array.append(i)
-            f = open('/mnt/c/Users/Y.Kazabekov/projects/Network_utilities/parsed_fdb/{}.txt'.format(ip), 'w')
+            f = open('/home/appliance/venv/parsed_fdb/{}_fdb.txt'.format(ip), 'w')
             for item in final_array:
                 f.write("%s\n" % item)  
             f.close()

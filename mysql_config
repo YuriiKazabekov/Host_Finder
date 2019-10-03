@@ -6,7 +6,10 @@ CREATE USER 'myapp'@'localhost' IDENTIFIED BY 'Mad_H0rse';
 GRANT ALL PRIVILEGES ON database.myapp TO 'myapp'@'localhost' WITH GRANT OPTION;
 
 UPDATE mysql.user SET Grant_priv='Y', Super_priv='Y' WHERE User='myapp';
-F
+FLUSH PRIVILEGES;
+
+GRANT ALL ON *.* TO 'myapp'@'localhost';
+
 
 
 
@@ -14,9 +17,9 @@ db schema
 
 
 fdb 
-| mac-address | vlan ID | switch IP | port number | time of adding | time of checking (время последней активности) |
+| mac-address (PRIMARY KEY)| vlan ID | switch IP | port number | time of adding(время последней активности)|
 lease
-| mac-address | IP address | host name | port number | 
+| mac-address | IP address | host name | 
 
 
 fdb
