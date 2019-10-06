@@ -200,19 +200,27 @@ def dbupdater():
                     mystring = before_keyword
                     a.append(mystring)
                     result_array.append(a)
+    
+    #text_sql = 'SELECT mac_address FROM fdb'
+    #cursor.execute(text_sql)
+    #result = cursor.fetchall()   
 
-          
+  
     for i in result_array:
-            try:
-                try:
-                    text_sql = 'INSERT INTO fdb(mac_address , vlan_ID , switch_IP , port_number, time_of_adding ) VALUES("{}",{},"{}","{}","{}")'.format(i[2],i[0], i[6], i[3], now.strftime('%Y-%m-%d %H:%M:%S'))
-                    cursor.execute(text_sql)
-                except:
-                    text_sql = 'UPDATE fdb SET vlan_ID= REPLACE("{}"), switch_IP=REPLACE("{}"), port_number=REPLACE("{}"), time_of_adding=REPLACE("{}") WHERE mac_address="{}"'.format(i[0], i[6], i[3], i[2], now.strftime('%Y-%m-%d %H:%M:%S'))
-                    cursor.execute(text_sql) 
-            except:
-                pass
-          
+        mac = i[2]
+        text_sql = 'SELECT mac_address FROM fdb'
+        cursor.execute(text_sql)
+        result = cursor.fetchall() 
+    #if mac in result:
+        if any(mac in s for s in result):
+        
+            text_sql = 'DELETE FROM fdb WHERE mac_address = "{}"'.format(i[2])
+            cursor.execute(text_sql) 
+            text_sql = 'INSERT INTO fdb(mac_address , vlan_ID , switch_IP , port_number, time_of_adding ) VALUES("{}",{},"{}","{}","{}")'.format(i[2],i[0], i[6], i[3], now.strftime('%Y-%m-%d %H:%M:%S'))
+            cursor.execute(text_sql)    
+        else: 
+            text_sql = 'INSERT INTO fdb(mac_address , vlan_ID , switch_IP , port_number, time_of_adding ) VALUES("{}",{},"{}","{}","{}")'.format(i[2],i[0], i[6], i[3], now.strftime('%Y-%m-%d %H:%M:%S'))
+            cursor.execute(text_sql)
           
           
     ####################################################################################################################  LEASE
@@ -247,7 +255,7 @@ def dbupdater():
             
 
 #fdb()         
-#lease()
+lease()
 dbupdater()    
               
 ####################################################################################################################
