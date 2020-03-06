@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+  <div><form action="/process_data/" method="post">
+	        <input type="text" name="SelectKey" id="idtxt3"> 
+                        <input type="submit" class="btn btn-dark" Value="Search">
+	       </form>
+	    </div>
+	    <div><form method="get" action="/index">
+	        <button type="submit">All results</button>
+	        </form>
+                    </div>
+
+    <h1>No matches found </h1>
+    <div><p></p>
+            {% for table in df %}
+               {{titles[loop.index]}}
+               {{ table|safe }}
+            {% endfor %}
+    </div>
+{% endblock %}

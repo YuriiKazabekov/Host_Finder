@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+    const getSort = ({ target }) => {
+        const order = (target.dataset.order = -(target.dataset.order || -1));
+        const index = [...target.parentNode.cells].indexOf(target);
+        const collator = new Intl.Collator(['en', 'ru'], { numeric: true });
+        const comparator = (index, order) => (a, b) => order * collator.compare(
+            a.children[index].innerHTML,
+            b.children[index].innerHTML
+        );
+        
+        for(const tBody of target.closest('table').tBodies)
+            tBody.append(...[...tBody.rows].sort(comparator(index, order)));
+
+        for(const cell of target.parentNode.cells)
+            cell.classList.toggle('sorted', cell === target);
+    };
+    
+    document.querySelectorAll('.table_sort thead').forEach(tableTH => tableTH.addEventListener('click', () => getSort(event)));
+    
+});</script>
+
+
+  <div style="overflow: hidden; float: right;">
+		<div style="width: 1000%; ">
+			<div style="float: left; padding-right: 15px;">
+				<form action="/process_data/" method="post">
+					<input type="text" name="SelectKey" id="idtxt3" size="20"> 
+					<input type="submit" class="btn btn-dark" Value="Search">
+				</form>
+			</div>
+			<div style="float: left; padding-right: 15px;">
+				<form method="get" action="/index">
+				<input type="submit" class="btn btn-dark" Value="All results">
+				</form>
+			</div>			
+                                                <div style="float: left; padding-right: 20px;" >
+				<form method="post" action="/getfile/">
+				<input type="submit" class="btn btn-dark" Value="Export to CSV">
+				</form>
+			</div>
+
+		</div>
+    
+    </div>
+    <div style="float: none; padding-left: 20px; padding-right: 20px; padding-top:20px;">
+		<table id="dtBasicExample" class="table table_sort table-striped table-sm" cellspacing="0" width="100%">
+			<thead>
+				<tr>
+					<th>Mac-address</th>
+					<th>Switch IP</th>
+					<th>Port number</th>
+					<th>Vlan</th>
+					<th>Host IP</th>
+					<th>Host name</th>
+					<th>VOIP account</th>
+					<th>Phone number</th>
+					<th>VOIP agent type</th>
+					<th>Last check</th>
+				<tr>
+			</thead>
+			<tbody>
+				{% for table in df %}
+				<tr>
+					{% for value in table %}
+					<td>{{ value }}</td>
+					{% endfor %}
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+   </div>
+{% endblock %}

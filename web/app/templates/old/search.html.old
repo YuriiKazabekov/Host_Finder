@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Search</h1>
+    <form action="/process_data/" method="post">
+    <input type="text" name="SelectKey" id="idtxt3"> 
+    <input type="submit" class="btn btn-dark" Value="Search">
+    </form>
+
+
+
+
+{% endblock %}
+
+

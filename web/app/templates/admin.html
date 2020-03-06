@@ -1,0 +1,184 @@
+{% block doc -%} <!DOCTYPE html> <html{% block html_attribs %}{% endblock html_attribs %}> {%- block html %}
+  <head>
+    <link rel="icon" type="image/png" href="/home/appliance/venv/web/app/img/creatio.png" />
+    {%- block head %}
+    <title>{% block title %}{{title|default}}{% endblock title %}</title>
+	<style type="text/css">
+	
+        .table table {
+		border-collapse: collapse;
+		
+	}
+	.table th {
+		cursor: pointer;
+	}
+	.table td,
+	.table th {
+		width: 150px;
+		height: 40px;
+		text-align: center;
+		
+	}
+	.table tbody tr:nth-child(even) {
+	}
+	th.sorted[data-order="1"],
+	th.sorted[data-order="-1"] {
+		position: relative;
+	}
+	th.sorted[data-order="1"]::after,
+	th.sorted[data-order="-1"]::after {
+		right: 8px;
+		position: absolute;
+	}
+	th.sorted[data-order="-1"]::after {
+		content: "▼"
+	}
+	th.sorted[data-order="1"]::after {
+		content: "▲"
+	}
+    
+	.h3 {
+	text-align: center
+	}
+  
+	.outer-div
+	{
+     padding-left: 20%;
+	 padding-right: 20%
+	}
+  
+	.div {
+    display: inline-block; 
+	min-height: 10em;
+    display: table-cell;
+    vertical-align: top
+	
+	
+  }
+
+</style>
+    {%- block metas %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%- endblock metas %}
+    {%- block styles %}
+    <!-- Bootstrap -->
+    <link href="{{bootstrap_find_resource('css/bootstrap.css', cdn='bootstrap')}}" rel="stylesheet">
+    {%- endblock styles %}
+    {%- endblock head %}
+  </head>
+  <body{% block body_attribs %}{% endblock body_attribs %}>
+    {% block body -%}
+{% block navbar %}
+    <nav class="navbar navbar-inverse ">
+        
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="{{ url_for('index') }}">HostFinder</a></li>
+                    <li><a href="{{ url_for('index2') }}">Backup</a></li>
+
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {% if current_user.is_anonymous %}
+                    <li><a href="{{ url_for('login') }}">Login   </a></li>
+					
+					{% else %}
+						{% if current_user.role == 'admin' %}
+						<li><a href="{{ url_for('admin') }}">Admin   </a></li>
+						<li><a href="{{ url_for('logout') }}">Logout   </a></li>
+						{% else %}
+						<li><a href="{{ url_for('logout') }}">Logout   </a></li>
+						{% endif %}
+					{% endif %}
+                </ul>
+            </div>
+        
+    </nav>
+{% endblock %}
+{% block content %}
+<div class="outer-div">
+<div class="div"  style="float: top; padding-left: 20px; padding-right: 20px; padding-top:20px; ">
+		<h3 class="h3">Users</h3>
+		<p style="padding-top:15px;">
+		<table id="dtBasicExample" class="table table-bordered table-sm" cellspacing="0" width="100%" >
+			<thead>
+				
+			</thead>
+				<th>User ID</th>
+				<th>Username</th>
+				<th>Role</th>
+			<tbody>
+				{% for row in rows %}
+				<tr>
+					{% for value in row %}
+					<td>{{ value }}</td>
+					{% endfor %}
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		</p>
+</div>
+<div class="div" style="float: none; padding-left: 20px; padding-right: 20px; padding-top:20px;">
+    
+	<h3 class="h3">Create new</h3>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}<br>
+            {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.role.label }}<br>
+            {{ form.role(size=32) }}<br>
+            {% for error in form.role.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}<br>
+            {% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password2.label }}<br>
+            {{ form.password2(size=32) }}<br>
+            {% for error in form.password2.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+	</div>
+<div class="div" style="float: none; padding-left: 20px; padding-right: 20px; padding-top:20px;">
+	<h3 class="h3">Delete </h3>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form2.username.label }}<br>
+            {{ form2.username(size=32) }}<br>
+            {% for error in form2.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form2.submit() }}</p>
+    </form>
+
+</div>
+</div>
+
+{% endblock %}
+
+    {% block scripts %}
+    <script src="{{bootstrap_find_resource('jquery.js', cdn='jquery')}}"></script>
+    <script src="{{bootstrap_find_resource('js/bootstrap.js', cdn='bootstrap')}}"></script>
+    {%- endblock scripts %}
+    {%- endblock body %}
+  </body> {%- endblock html %} </html> {% endblock doc -%}
+
+

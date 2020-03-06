@@ -1,0 +1,92 @@
+{% block doc -%} <!DOCTYPE html> <html{% block html_attribs %}{% endblock html_attribs %}> {%- block html %}
+  <head>
+    <link rel="icon" type="image/png" href="/home/appliance/venv/web/app/img/creatio.png" />
+    {%- block head %}
+    <title>{% block title %}{{title|default}}{% endblock title %}</title>
+	<style type="text/css">
+	
+        .table_sort table {
+		border-collapse: collapse;
+	}
+	.table_sort th {
+		cursor: pointer;
+	}
+	.table_sort td,
+	.table_sort th {
+		width: 150px;
+		height: 40px;
+		text-align: center;
+	}
+	.table_sort tbody tr:nth-child(even) {
+	}
+	th.sorted[data-order="1"],
+	th.sorted[data-order="-1"] {
+		position: relative;
+	}
+	th.sorted[data-order="1"]::after,
+	th.sorted[data-order="-1"]::after {
+		right: 8px;
+		position: absolute;
+	}
+	th.sorted[data-order="-1"]::after {
+		content: "▼"
+	}
+	th.sorted[data-order="1"]::after {
+		content: "▲"
+	}
+    
+</style>
+    {%- block metas %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%- endblock metas %}
+    {%- block styles %}
+    <!-- Bootstrap -->
+    <link href="{{bootstrap_find_resource('css/bootstrap.css', cdn='bootstrap')}}" rel="stylesheet">
+    {%- endblock styles %}
+    {%- endblock head %}
+  </head>
+  <body{% block body_attribs %}{% endblock body_attribs %}>
+    {% block body -%}
+    {% block navbar %}
+
+    {%- endblock navbar %}
+{% block content %}
+<div style=" overflow: hidden; float: none; padding-left: 40%;">
+    <h1>Create new user</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}<br>
+            {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}<br>
+            {% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password2.label }}<br>
+            {{ form.password2(size=32) }}<br>
+            {% for error in form.password2.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+</div>
+{% endblock %}
+
+    {% block scripts %}
+    <script src="{{bootstrap_find_resource('jquery.js', cdn='jquery')}}"></script>
+    <script src="{{bootstrap_find_resource('js/bootstrap.js', cdn='bootstrap')}}"></script>
+    {%- endblock scripts %}
+    {%- endblock body %}
+  </body> {%- endblock html %} </html> {% endblock doc -%}
+
+

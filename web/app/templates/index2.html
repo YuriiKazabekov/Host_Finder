@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+  <div style="overflow: hidden; float: right;">
+		<div style="width: 1000%; ">
+			<div style="float: left; padding-right: 15px;">
+				<form method="get" action="/process_data_2/">
+				<input type="submit" class="btn btn-dark" Value="Make a backup copy">
+				</form>
+			</div>			
+                                                
+		</div>
+    
+    </div>
+    <div style="float: none; padding-left: 20px; padding-right: 20px; padding-top:40px;">
+		{% for row in show_result %}
+			<p style="border: 3px solid black; padding: 20px;>{{ row }}</p>		
+		{% endfor %}
+
+   </div>
+{% endblock %}

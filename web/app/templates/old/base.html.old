@@ -1,0 +1,44 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Finder</title>
+        {% else %}
+        <title>Finder</title>
+        {% endif %}
+    </head>
+    <body>
+    <h1></h1>
+    
+
+    <div>
+        Finder:
+        <a href="{{ url_for('index') }}">Home</a>
+        {% if current_user.is_anonymous %}
+        <a href="{{ url_for('login') }}">Login</a>
+        {% else %}
+        <a href="{{ url_for('logout') }}">Logout</a>
+        {% endif %}
+    </div>
+    <div>
+    <form action="/process_data/" method="post">
+    <input type="text" name="SelectKey" id="idtxt3"> 
+    <input type="submit" class="btn btn-dark" Value="Search">
+    </form>
+
+    <form method="get" action="/index">
+    <button type="submit">All results</button>
+    </form>
+    </div>
+    <hr>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+           <ul>
+           {% for message in messages %}
+           <li>{{ message }}</li>
+           {% endfor %}
+           </ul>
+        {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+    </body>
+</html>
