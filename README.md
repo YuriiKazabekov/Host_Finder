@@ -1,4 +1,4 @@
-# Python scripts
+# Host_Finder
 
-Python scripts for networking
+Python utility for collecting information from DHCP servers, switches, VOIP servers with web interface
 
