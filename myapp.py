@@ -20,30 +20,30 @@ import time
 conn = mysql.connector.connect(host='localhost',
                                       database='myapp',
                                       user='myapp',
-                                      password='###',
+                                      password='Mad_H0rse',
                                       autocommit=True)
 
 cursor = conn.cursor()
 
 #now = datetime.now()
 ################ D-LINK DGS 3120, 3420##################################
-ACSW_user = '###'
+ACSW_user = 'admin'
 #ACSW_password = getpass.getpass(prompt='ACSW_password:')
-ACSW_password = '###'
+ACSW_password = '!DGS3120#'
 
-SSW_1_user = '###'
+SSW_1_user = 'admin'
 #SSW_1_password = getpass.getpass(prompt='SSW_1_password:')
-SSW_1_password = '###'
+SSW_1_password = '!DGS3120##'
 
-SSW_2_user = '###'
+SSW_2_user = 'admin'
 #SSW_2_password = getpass.getpass(prompt='SSW_2_password:')
-SSW_2_password = ACSW_password = '###'
+SSW_2_password = ACSW_password = '!DGS3120#'
 
-SSW_3_user = '###'
+SSW_3_user = 'admin'
 #SSW_3_password = getpass.getpass(prompt='SSW_3_password:')
-SSW_3_password = ACSW_password = '###'
-
-ACSW_ip = ['10.0.1.250', '10.0.1.251', '10.0.1.252', '10.0.2.250', '10.0.2.251', '10.0.2.252', '10.0.2.253', '10.0.3.250', '10.0.3.251',  
+SSW_3_password = ACSW_password = '!DGS3120#'
+#'10.0.2.253'
+ACSW_ip = ['10.0.1.250', '10.0.1.251', '10.0.1.252', '10.0.2.250', '10.0.2.251', '10.0.2.252', '10.0.3.250', '10.0.3.251',  
              '10.0.3.252', '10.0.3.253' , '10.0.4.250', '10.0.4.251', '10.0.4.252', '10.0.5.250', '10.0.5.251', '10.0.5.252', '10.0.5.253',
              '10.0.6.250', '10.0.6.251', '10.0.6.253', '10.10.30.251']
 SSW_1_ip = ['10.0.7.250']
@@ -53,23 +53,23 @@ SSW_3_ip = ['10.0.15.250']
 #D_LINK_ip = ACSW_ip + SSW_1_ip + SSW_2_ip + SSW_3_ip
 #print (D_LINK_ip)
 ################ D-LINK DGS 1210########################################
-ACSW_1210_user = '###'
+ACSW_1210_user = 'admin'
 #ACSW_1210_password = getpass.getpass(prompt='ACSW_1210_password:')
-ACSW_1210_password = '###'
+ACSW_1210_password = '!DGS3120#'
 
 ACSW_1210_ip = ['10.0.5.241', '10.10.30.250']
 
 ################ CISCO SG-500, SG-350 ###################################
-CISCO_switches_user = '###'
+CISCO_switches_user = 'net-admin'
 #CISCO_switches_password = getpass.getpass(prompt='CISCO_switches_password:')
-CISCO_switches_password = '###'
+CISCO_switches_password = 'BronzePunish2018'
 
 CISCO_switches_ip = ['10.10.20.250', '10.10.20.251', '10.0.15.249', '10.0.7.254'] 
 
 ################ HP, Aruba 2350 ##########################################
-Aruba_switches_user = '###'
+Aruba_switches_user = 'manager'
 #Aruba_switches_password = getpass.getpass(prompt='Aruba_switches_password:')
-Aruba_switches_password = '###'
+Aruba_switches_password = '!DGS3120#'
 
 Aruba_switches_ip = ['10.10.30.252']
 ################ FG fdb ##########################################
@@ -77,21 +77,22 @@ Aruba_switches_ip = ['10.10.30.252']
 FG_fdb_ip = ['10.10.40.254']
 #################### all_switches_ip ####################################
 all_switches_ip = ACSW_ip + SSW_1_ip + SSW_2_ip + SSW_3_ip + ACSW_1210_ip + CISCO_switches_ip + Aruba_switches_ip + FG_fdb_ip
+#all_switches_ip = ACSW_ip
 print(all_switches_ip)
 ################ Windows DHCP server######################################
 #require installed ssh and winscp 
-DHCP_user = '###'
+DHCP_user = 'Y.Kazabekov'
 #DHCP_password = getpass.getpass(prompt='DHCP_password:')
-DHCP_password = '###'
+DHCP_password = 'FoundTasty2020'
 
 DHCP_ip = ['10.0.7.199', '10.0.15.252']
 #list of leases 
 Lease_list_1 = ['10.0.1.0', '10.0.2.0', '10.0.3.0', '10.0.4.0','10.0.5.0', '10.0.6.0', '10.0.16.0', '10.0.20.0', '10.0.24.0', '10.10.30.0', '10.10.31.0' ] 
 Lease_list_2 = ['10.0.12.0']
 ################ Fortigate DHCP server######################################
-FG_user = '###'
+FG_user = 'net-admin'
 #FG_password = getpass.getpass(prompt='FG_password:')
-FG_password = '###'
+FG_password = 'BronzePunish2018'
 
 FG_ip = ['10.10.20.254', '10.10.40.254']
 
@@ -402,33 +403,61 @@ def CISCO_fdb():
                 f.close()
                 ssh.close()
         else:
-            print('Connection to device {}'.format(ip))
-            with pexpect.spawn('ssh {}@{}'.format(CISCO_switches_user, ip)) as ssh:   
+            if ip == '10.10.20.250':
+                print('Connection to device {}'.format(ip))
+                with pexpect.spawn('ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -c aes256-ctr {}@{}'.format(CISCO_switches_user, ip)) as ssh:   
             
-                ssh.expect('password:')
-                ssh.sendline(CISCO_switches_password)
-                ssh.expect('[#>]')
-                ssh.sendline('show mac address-table')    
-                ssh.expect('<return>')
-                aaa = ssh.before.decode('ascii')
-                ssh.sendline('a')
-                ssh.expect('#')
-                    
-                #ssh.expect([pexpect.TIMEOUT, pexpect.EOF])
-                #ssh.expect([pexpect.EOF, timeout=None])
-                bbb = ssh.before.decode('ascii')
-                    
-                
-                
-                f = open('/home/appliance/venv/fdb/{}_fdb.txt'.format(ip), 'w')
-                f.write(aaa)
-                f.write(bbb)  # python will convert \n to os.linesep
-                f.close()
+                    ssh.expect('password:')
+                    ssh.sendline(CISCO_switches_password)
+                    ssh.expect('[#>]')
+                    ssh.sendline('show mac address-table')    
+                    ssh.expect('<return>')
+                    aaa = ssh.before.decode('ascii')
+                    ssh.sendline('a')
+                    ssh.expect('#')
+                        
+                    #ssh.expect([pexpect.TIMEOUT, pexpect.EOF])
+                    #ssh.expect([pexpect.EOF, timeout=None])
+                    bbb = ssh.before.decode('ascii')
+                        
                     
                     
-                #print(bbb)
-                ssh.close()        
-                
+                    f = open('/home/appliance/venv/fdb/{}_fdb.txt'.format(ip), 'w')
+                    f.write(aaa)
+                    f.write(bbb)  # python will convert \n to os.linesep
+                    f.close()
+                        
+                        
+                    #print(bbb)
+                    ssh.close() 
+            else:
+                print('Connection to device {}'.format(ip))
+                with pexpect.spawn('ssh {}@{}'.format(CISCO_switches_user, ip)) as ssh:   
+            
+                    ssh.expect('password:')
+                    ssh.sendline(CISCO_switches_password)
+                    ssh.expect('[#>]')
+                    ssh.sendline('show mac address-table')    
+                    ssh.expect('<return>')
+                    aaa = ssh.before.decode('ascii')
+                    ssh.sendline('a')
+                    ssh.expect('#')
+                        
+                    #ssh.expect([pexpect.TIMEOUT, pexpect.EOF])
+                    #ssh.expect([pexpect.EOF, timeout=None])
+                    bbb = ssh.before.decode('ascii')
+                        
+                    
+                    
+                    f = open('/home/appliance/venv/fdb/{}_fdb.txt'.format(ip), 'w')
+                    f.write(aaa)
+                    f.write(bbb)  # python will convert \n to os.linesep
+                    f.close()
+                        
+                        
+                    #print(bbb)
+                    ssh.close() 
+                    
         with open('/home/appliance/venv/fdb/{}_fdb.txt'.format(ip)) as file:
             array = [row.strip() for row in file]
         new_array = []
@@ -518,7 +547,10 @@ def Aruba_fdb():
                 i3 = i2.replace("[2K-- [2K[1;24r  ", "")
                 i4 = i3[0:2] + '-' + i3[2:4] + '-' + i3[4:6] + i[6:9] + '-' + i3[9:11] + '-' + i3[11:]
                 i5 = i4[26:] + "  VLAN_NAME  " + i4[0:26] + '  Dynamic  ' + '  Forward  '
-                new_array.append(i5)
+                if len(i) <= 63:  # fix bad result from switch Aruba
+                    new_array.append(i5)
+                else:
+                    pass
             else:
                 pass
                 
@@ -721,7 +753,7 @@ def fg_lease():
 
 
         for i in final_array:
-            #print(i)
+            print(i)
             try:  
                 text_sql = 'INSERT INTO lease(mac_address , IP, hostname ) VALUES("{}","{}","{}")'.format(i[1],i[0], i[2])
                 cursor.execute(text_sql)
@@ -781,10 +813,13 @@ def dbupdater():
             cursor.execute(text_sql)
             
         except:   
-            text_sql = 'DELETE FROM fdb WHERE mac_address = "{}"'.format(i[2])
-            cursor.execute(text_sql) 
-            text_sql = 'INSERT INTO fdb(mac_address , vlan_ID , switch_IP , port_number, time_of_adding ) VALUES("{}",{},"{}","{}","{}")'.format(i[2],i[0], i[6], i[3], now.strftime('%Y-%m-%d %H:%M:%S'))
-            cursor.execute(text_sql)
+            try:
+                text_sql = 'DELETE FROM fdb WHERE mac_address = "{}"'.format(i[2])
+                cursor.execute(text_sql) 
+                text_sql = 'INSERT INTO fdb(mac_address , vlan_ID , switch_IP , port_number, time_of_adding ) VALUES("{}",{},"{}","{}","{}")'.format(i[2],i[0], i[6], i[3], now.strftime('%Y-%m-%d %H:%M:%S'))
+                cursor.execute(text_sql)
+            except:
+                pass
         
                 
     ####################################################################################################################  LEASE
@@ -805,7 +840,8 @@ def dbupdater():
                     pass
                 else:
                     result_lease_array.append(row)                  
-                 
+                
+                
     for i in result_lease_array:
         try:  
             #print(i)
@@ -872,6 +908,7 @@ while 1 != 2:
         CISCO_fdb()
     except:
         pass 
+    
     try:
         Aruba_fdb()
     except:
@@ -893,11 +930,13 @@ while 1 != 2:
         dbupdater() 
     except:
         pass
+    #dbupdater()
     try:
         voip() 
     except:
         pass
-    
+    time.sleep(600)
+    print('DATABASE WAS UPDATED')
     #text_sql = 'SELECT  fdb.mac_address, fdb.switch_IP, fdb.vlan_ID, lease.IP, lease.hostname, fdb.time_of_adding FROM fdb , lease  WHERE lease.mac_address = fdb.mac_address ORDER BY fdb.vlan_ID'
     #cursor.execute(text_sql)
     #result = cursor.fetchall()
